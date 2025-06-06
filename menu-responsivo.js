@@ -24,6 +24,17 @@ function scrollToElement(targetSelector, duration = 1000) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
 
+  // Se o navegador suporta scroll suave nativo
+  if ('scrollBehavior' in document.documentElement.style) {
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+    return;
+  }
+
+  // Fallback: animação manual
   const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
@@ -51,7 +62,6 @@ function scrollToElement(targetSelector, duration = 1000) {
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    scrollToElement(this.getAttribute('href'), 500); 
+    scrollToElement(this.getAttribute('href'), 500); // Duração ajustável
   });
 });
-
