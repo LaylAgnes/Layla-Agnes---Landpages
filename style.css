@@ -43,6 +43,7 @@ nav .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 4px 4px
 }
 
 nav .menu-toggle {
