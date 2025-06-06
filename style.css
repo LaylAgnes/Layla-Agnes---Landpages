@@ -228,6 +228,9 @@ footer p a:hover {
 /* RESPONSIVO */
 @media (max-width: 768px) {
   /* Mostrar o botão do menu no mobile */
+  nav {
+   padding: 4px 16px;
+  }
   nav .menu-toggle {
     display: block;
   }
