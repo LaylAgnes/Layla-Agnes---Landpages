@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* altura mínima da tela */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos básicos para o header e nav */
+header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Alinha a logo e a lista de links */
+  align-items: center;
+  padding: 4px 4px; /* Espaçamento ao redor do menu */
+  position: relative;
+  width: 100%; /* largura da nav em 100% */
+  background-color: rgba(0, 0, 0, 0.26); /* Fundo levemente opaco */
+  backdrop-filter: blur(10px); /* Efeito de blur */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Sombra suave */
+  
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinha os links em linha */
+}
+
+#menu li {
+  margin-left: 20px; /* Espaçamento entre os links */
+}
+
+#menu a {
+  text-decoration: none;
+  color: #fff; /* Cor do texto do menu */
+  font-weight: bold; /* Texto em negrito */
+  padding: 8px 12px; /* Espaçamento ao redor do texto */
+  border-radius: 25px; /* Borda arredondada */
+  transition: background-color 0.3s ease; /* Transição para o efeito hover */
+}
+
+#menu a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Opacidade para o efeito hover */
+}
+
+section {
+  text-align: center;
+  padding: 40px 0;
+  max-width: 100%;      /* Largura máxima para não esticar demais */
+  line-height: 1.6;       /* Espaçamento entre linhas para facilitar a leitura */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e legível */
+}
+
+/* Títulos dentro da section */
+section h1, section h2, section h3 {
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+/* Parágrafos */
+section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Links */
+section a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+.black {
+    background-color: black;
+    color:white
+}
+
+.white {
+    background-color: white;
+    color:black
+}
+
+.white a {
+    color: black;
+}
+
+.black a {
+    color: white;
+}
+
+#projetos {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#projetos h2 {
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+#projetos article {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projetos article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+#projetos article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #333; /* fundo neutro caso não tenha imagem ainda */
+}
+
+#projetos article h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#projetos article a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#projetos article a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+footer.rodape {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .rodape-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer .rodape-grid div {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer p a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  list-style: none;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  /* Mostrar o botão do menu no mobile */
+  nav .menu-toggle {
+    display: block;
+  }
+
+  /* Esconder o menu (links) no mobile */
+  #menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+  }
+
+  /* Quando o menu estiver aberto, adiciona a classe .show no JS */
+  #menu.show {
+    display: flex;
+  }
+
+  /* Os itens do menu ficam empilhados e centralizados */
+  #menu li {
+    margin: 10px 0;
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  /* Ajusta os links para o tamanho mobile */
+  #menu a {
+    padding: 12px;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  section.black, section.white {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  footer .rodape-grid {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  footer .rodape-grid div {
+    min-width: auto;
+  }
+
+  footer p, footer p a {
+    font-size: 1rem;
+  }
+}
