@@ -51,7 +51,7 @@ function scrollToElement(targetSelector, duration = 1000) {
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    scrollToElement(this.getAttribute('href'), 1500); // 1500ms = 1.5s
+    scrollToElement(this.getAttribute('href'), 500); 
   });
 });
 
