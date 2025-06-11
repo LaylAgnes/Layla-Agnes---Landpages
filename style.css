@@ -7,6 +7,8 @@
 html, body {
   height: 100%;
   margin: 0;
+  scroll-behavior: auto; /* o JS já controla */
+  overflow-x: hidden; /* ok esconder horizontal se quiser */
 }
 
 body {
@@ -41,6 +43,7 @@ nav .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 4px 4px
 }
 
 nav .menu-toggle {
@@ -225,6 +228,9 @@ footer p a:hover {
 /* RESPONSIVO */
 @media (max-width: 768px) {
   /* Mostrar o botão do menu no mobile */
+  nav {
+   padding: 4px 16px;
+  }
   nav .menu-toggle {
     display: block;
   }
